@@ -1,0 +1,14 @@
+sequenceDiagram
+    Browser->>+Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    Browser->>+Server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    Server-->>+Browser: HTML Document
+    Browser->>+Server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+     Server-->>+Browser: css file
+    Browser->>+Server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+     Server-->>+Browser: JavaScript file
+    Note over Server,Browser: Browser starts executing the JavaScript code
+    Browser->>+Server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    Server-->>+Browser: [{"content":"What makes sense is not always right","date":"2023-04-11T03:02:08.826Z"},{...}
+    Note over Server,Browser: Browser executes callback function that renders the notes
+
+    ![Getting Started](./diagram1.png)
